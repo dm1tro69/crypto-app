@@ -7,7 +7,7 @@ import {logDOM} from "@testing-library/react";
 
 const Featured = () => {
 
-    const url = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=6&page=1&sparkline=false'
+    const url = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=9&page=1&sparkline=false'
 
     const [data, setData] = useState(null)
 
@@ -42,12 +42,12 @@ const Featured = () => {
                                 <p>${d.current_price.toLocaleString()}</p>
                             </div>
                             {d.price_change_percentage_24h < 0 ? (
-                                <span className={'red'}><FiArrowDown/>
+                                <span className={'red'}><FiArrowDown className={'icon'}/>
                                     {d.price_change_percentage_24h.toFixed(2)}%
                         </span>
 
                             ) : (
-                                <span className={'green'}><FiArrowUpRight/>
+                                <span className={'green'}><FiArrowUpRight  className={'icon'}/>
                                     {d.price_change_percentage_24h.toFixed(2)}%
                         </span>
                             )
